@@ -9,8 +9,8 @@ namespace ConsoleApp1
             Console.WriteLine("Testing branch commits/pulls");
             Loadwindow();
             Titlescreen();
-            
-            while (startgame==false)
+            // Wait for any of key press to start the game
+            while (!Raylib.WindowShouldClose() && !startgame)
             {
                 Updatetitlescreen();
                 Raylib.BeginDrawing();
@@ -18,7 +18,9 @@ namespace ConsoleApp1
                 Raylib.EndDrawing();
             }
 
+            Raylib.CloseWindow(); // Make sure window is closed
         }
+        
         static void Loadwindow()
         {
 
@@ -34,7 +36,7 @@ namespace ConsoleApp1
         }
         static void Updatetitlescreen()
         {
-            if (Raylib.IsKeyDown(KeyboardKey.Space))
+            if (Raylib.GetKeyPressed() != 0)  //check any key has been pressed
             {
                 startgame = true;
             }
@@ -44,5 +46,5 @@ namespace ConsoleApp1
         {
 
         }
-    }
+     }
 }
