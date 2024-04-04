@@ -17,13 +17,14 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Testing branch commits/pulls");
             Loadwindow();
-            Titlescreen();
+
             // Wait for any of key press to start the game
             while (!Raylib.WindowShouldClose() && !startgame)
             {
-                Updatetitlescreen();
+
                 Raylib.BeginDrawing();
                 Drawtitlescreen();
+                Updatetitlescreen();
                 Raylib.EndDrawing();
             }
 
@@ -37,8 +38,12 @@ namespace ConsoleApp1
                 DrawBoard();
                 HandleInput();
                 CheckWinCondition();
+
             }
-            Raylib.CloseWindow();
+
+            Raylib.BeginDrawing();
+            DrawWinScreen();
+            Raylib.EndDrawing();
         }
 
         static void Loadwindow()
@@ -54,17 +59,13 @@ namespace ConsoleApp1
             Raylib.DrawText("Press any key to start", 140, 330, 54, Color.Black);
 
         }
+
         static void Updatetitlescreen()
         {
             if (Raylib.GetKeyPressed() != 0)  //check any key has been pressed
             {
                 startgame = true;
             }
-        }
-
-        static void Titlescreen()
-        {
-
         }
         static void DrawBoard()
         {
@@ -120,13 +121,20 @@ namespace ConsoleApp1
         //ERYKA
         static void CheckWinCondition()
         {
+            Boolean gameEnd = false;
+
             //Checking ROWS (horizontal)
             for (int row = 0; row < 3; row++)
             {
                 if (board[row, 0] != 0 && board[row, 0] == board[row, 1] && board[row, 0] == board[row, 2])
                 {
-                    gameActive = false;
+                    gameEnd = true;
                     Console.WriteLine("Player " + board[row, 0] + " wins!");
+
+                    if(gameEnd)
+                    {
+                        clearBoard();
+                    }
                     return;
                 }
             }
@@ -136,8 +144,12 @@ namespace ConsoleApp1
             {
                 if (board[0, col] != 0 && board[0, col] == board[1, col] && board[0, col] == board[2, col])
                 {
-                    gameActive = false;
+                    gameEnd = true;
                     Console.WriteLine("Player " + board[0, col] + " wins!");
+                    if (gameEnd)
+                    {
+                        clearBoard();
+                    }
                     return;
                 }
             }
@@ -146,15 +158,20 @@ namespace ConsoleApp1
             //Checking DIAGONALS
             if (board[0, 0] != 0 && board[0, 0] == board[1, 1] && board[0, 0] == board[2, 2])
             {
-                gameActive = false;
+                gameEnd = true;
                 Console.WriteLine("Player " + board[0, 0] + " wins!");
+                if (gameEnd)
+                {
+                    clearBoard();
+                }
                 return;
             }
 
             if (board[0, 2] != 0 && board[0, 2] == board[1, 1] && board[0, 2] == board[2, 0])
             {
-                gameActive = false;
+                gameEnd = true;
                 Console.WriteLine("Player " + board[0, 2] + " wins!");
+                
                 return;
             }
 
@@ -180,9 +197,32 @@ namespace ConsoleApp1
                 gameActive = false;
                 Console.WriteLine("It's a draw!");
             }
+              
+            //Clears Game Board
+            if (gameEnd)
+            {
+                    clearBoard();
+            }
+            //End of Eryka's Work
+        }
+        static void DrawWinScreen()
+        {
+            Raylib.ClearBackground(Color.Gold);
+            Raylib.DrawText("Tic Tac Toe", 205, 220, 74, Color.Black);
+            Raylib.DrawText("Press any key to start", 140, 330, 54, Color.Black);
 
+        }
 
+        static void clearBoard()
+        {
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    board[row, col] = 0;
+                }
 
+            }
         }
     }
 }
