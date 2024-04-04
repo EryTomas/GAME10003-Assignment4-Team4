@@ -22,6 +22,12 @@ namespace ConsoleApp1
             sounds[4] = LoadSound("../../../Sounds/Bell.mp3");
 
         }
+        public void PlayBuzzerSound()
+        {
+            PlaySound(sounds[0]);
+        }
 
     }
+
+}
 
