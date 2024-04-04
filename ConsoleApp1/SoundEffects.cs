@@ -30,6 +30,10 @@ namespace ConsoleApp1
         {
             PlaySound(sounds[1]);
         }
+        public void PlayPingSound()
+        {
+            PlaySound(sounds[2]);
+        }
 
     }
 
