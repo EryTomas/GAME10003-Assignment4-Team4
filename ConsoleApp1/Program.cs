@@ -174,6 +174,13 @@ namespace ConsoleApp1
                     break;
             }
 
+            //Print a DRAW message if players tie
+            if (draw)
+            {
+                gameActive = false;
+                Console.WriteLine("It's a draw!");
+            }
+
 
 
         }
