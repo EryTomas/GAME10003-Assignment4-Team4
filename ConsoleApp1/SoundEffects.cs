@@ -38,6 +38,10 @@ namespace ConsoleApp1
         {
             PlaySound(sounds[3]);
         }
+        public void PlayBellSound()
+        {
+            PlaySound(sounds[4]);
+        }
 
     }
 
