@@ -20,8 +20,6 @@ namespace ConsoleApp1
             sounds[2] = LoadSound("../../../Sounds/Ping.mp3");
             sounds[3] = LoadSound("../../../Sounds/Pong.mp3");
             sounds[4] = LoadSound("../../../Sounds/Bell.mp3");
-          
-
 
         }
 
@@ -29,6 +27,24 @@ namespace ConsoleApp1
         {
             PlaySound(sounds[0]);
         }
+        public void PlayBoomSound()
+        {
+            PlaySound(sounds[1]);
+        }
+        public void PlayPingSound()
+        { 
+            PlaySound(sounds[2]);
+        }
+        public void PlayPongSound()
+        {
+            PlaySound(sounds[3]);
+        }
+        public void PlayBellSound()
+        {
+            PlaySound(sounds[4]);
+        }
+
+
 
         public void EndSounds()
         {
