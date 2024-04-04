@@ -158,6 +158,23 @@ namespace ConsoleApp1
                 return;
             }
 
+            //Check for a DRAW
+            bool draw = true;
+            for (int row = 0; row < 3; row++)
+            {
+                for (int col = 0; col < 3; col++)
+                {
+                    if (board[row, col] == 0)
+                    {
+                        draw = false;
+                        break;
+                    }
+                }
+                if (!draw)
+                    break;
+            }
+
+
 
         }
     }
