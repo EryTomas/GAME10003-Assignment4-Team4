@@ -131,7 +131,16 @@ namespace ConsoleApp1
                 }
             }
 
-
+            //Checking COLUMNS (vertical)
+            for (int col = 0; col < 3; col++)
+            {
+                if (board[0, col] != 0 && board[0, col] == board[1, col] && board[0, col] == board[2, col])
+                {
+                    gameActive = false; // End the game
+                    Console.WriteLine("Player " + board[0, col] + " wins!");
+                    return;
+                }
+            }
 
 
         }
