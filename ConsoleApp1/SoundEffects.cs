@@ -43,12 +43,14 @@ namespace ConsoleApp1
         {
             PlaySound(sounds[4]);
         }
-
-
-
         public void EndSounds()
         {
             UnloadSound(sounds[0]);
+            UnloadSound(sounds[1]);
+            UnloadSound(sounds[2]);
+            UnloadSound(sounds[3]);
+            UnloadSound(sounds[4]);
+
             CloseAudioDevice();
         }
     }
