@@ -116,8 +116,23 @@ namespace ConsoleApp1
                 }
             }
         }
+
+        //ERYKA
         static void CheckWinCondition()
         {
+            //Checking ROWS (horizontal)
+            for (int row = 0; row < 3; row++)
+            {
+                if (board[row, 0] != 0 && board[row, 0] == board[row, 1] && board[row, 0] == board[row, 2])
+                {
+                    gameActive = false; //End Game
+                    Console.WriteLine("Player " + board[row, 0] + " wins!");
+                    return;
+                }
+            }
+
+
+
 
         }
     }
