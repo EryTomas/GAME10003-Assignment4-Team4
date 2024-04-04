@@ -16,7 +16,9 @@ namespace ConsoleApp1
         {
             //Load Sounds
             sounds[0] = LoadSound("../../../Sounds/Buzzer.mp3");
-            sounds[1] = LoadSound("../../../Sounds/Buzzer.mp3");
+            sounds[1] = LoadSound("../../../Sounds/Boom.mp3");
+            sounds[2] = LoadSound("../../../Sounds/Ping.mp3");
+            sounds[3] = LoadSound("../../../Sounds/")
           
 
 
