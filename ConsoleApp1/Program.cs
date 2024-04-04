@@ -125,7 +125,7 @@ namespace ConsoleApp1
             {
                 if (board[row, 0] != 0 && board[row, 0] == board[row, 1] && board[row, 0] == board[row, 2])
                 {
-                    gameActive = false; //End Game
+                    gameActive = false;
                     Console.WriteLine("Player " + board[row, 0] + " wins!");
                     return;
                 }
@@ -136,10 +136,26 @@ namespace ConsoleApp1
             {
                 if (board[0, col] != 0 && board[0, col] == board[1, col] && board[0, col] == board[2, col])
                 {
-                    gameActive = false; // End the game
+                    gameActive = false;
                     Console.WriteLine("Player " + board[0, col] + " wins!");
                     return;
                 }
+            }
+
+
+            //Checking DIAGONALS
+            if (board[0, 0] != 0 && board[0, 0] == board[1, 1] && board[0, 0] == board[2, 2])
+            {
+                gameActive = false;
+                Console.WriteLine("Player " + board[0, 0] + " wins!");
+                return;
+            }
+
+            if (board[0, 2] != 0 && board[0, 2] == board[1, 1] && board[0, 2] == board[2, 0])
+            {
+                gameActive = false;
+                Console.WriteLine("Player " + board[0, 2] + " wins!");
+                return;
             }
 
 
