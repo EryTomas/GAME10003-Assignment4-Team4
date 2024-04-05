@@ -38,12 +38,12 @@ namespace ConsoleApp1
                 DrawBoard();
                 HandleInput();
                 CheckWinCondition();
-
+                
             }
 
             Raylib.BeginDrawing();
-            DrawWinScreen();
-            Raylib.EndDrawing();
+
+
         }
 
         static void Loadwindow()
@@ -134,6 +134,12 @@ namespace ConsoleApp1
                     if(gameEnd)
                     {
                         clearBoard();
+                        for (int x = 0; x < 100; x++)
+                        {
+                            Raylib.BeginDrawing();
+                            DrawWinScreen();
+                            Raylib.EndDrawing();
+                        }
                     }
                     return;
                 }
@@ -149,6 +155,12 @@ namespace ConsoleApp1
                     if (gameEnd)
                     {
                         clearBoard();
+                        for (int x = 0; x < 100; x++)
+                        {
+                            Raylib.BeginDrawing();
+                            DrawWinScreen();
+                            Raylib.EndDrawing();
+                        }
                     }
                     return;
                 }
@@ -163,6 +175,12 @@ namespace ConsoleApp1
                 if (gameEnd)
                 {
                     clearBoard();
+                    for(int x =0; x< 100; x++) 
+                    { 
+                        Raylib.BeginDrawing();
+                        DrawWinScreen();
+                        Raylib.EndDrawing();
+                    }
                 }
                 return;
             }
@@ -208,8 +226,9 @@ namespace ConsoleApp1
         static void DrawWinScreen()
         {
             Raylib.ClearBackground(Color.Gold);
-            Raylib.DrawText("Tic Tac Toe", 205, 220, 74, Color.Black);
-            Raylib.DrawText("Press any key to start", 140, 330, 54, Color.Black);
+            Raylib.DrawText("PLAYER " + currentPlayer +  " WINS", 100, 200, 54, Color.Black);
+
+
 
         }
 
