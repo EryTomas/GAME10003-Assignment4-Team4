@@ -29,11 +29,34 @@ namespace ConsoleApp1
         {
             PlaySound(sounds[0]);
         }
-
+        public void PlayBoomSound()
+        {
+            PlaySound(sounds[1]);
+        }
+        public void PlayPingSound()
+        {
+            PlaySound(sounds[2]);
+        }
+        public void PlayPongSound()
+        {
+            PlaySound(sounds[3]);
+        }
+        public void PlayBellSound()
+        {
+            PlaySound(sounds[4]);
+        }
         public void EndSounds()
         {
             UnloadSound(sounds[0]);
+            UnloadSound(sounds[1]);
+            UnloadSound(sounds[2]);
+            UnloadSound(sounds[3]);
+            UnloadSound(sounds[4]);
+
             CloseAudioDevice();
         }
+
     }
+
 }
+
